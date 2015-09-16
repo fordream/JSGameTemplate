@@ -1,7 +1,6 @@
-
 var HelloWorldLayer = cc.Layer.extend({
-    sprite:null,
-    ctor:function () {
+    sprite: null,
+    ctor: function () {
         //////////////////////////////
         // 1. super init first
         this._super();
@@ -31,12 +30,16 @@ var HelloWorldLayer = cc.Layer.extend({
         });
         this.addChild(this.sprite, 0);
 
+        var width = size.width;
+        var height = size.height;
+        cc.log("width : " + width);
+        cc.log("height : " + height);
         return true;
     }
 });
 
 var HelloWorldScene = cc.Scene.extend({
-    onEnter:function () {
+    onEnter: function () {
         this._super();
         var layer = new HelloWorldLayer();
         this.addChild(layer);
